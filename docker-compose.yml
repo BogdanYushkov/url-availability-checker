@@ -1,0 +1,19 @@
+services:
+  node-app:
+    build: .
+    container_name: url-availability-checker
+    restart: always
+
+    env_file:
+      - .env
+
+    environment:
+      NODE_ENV: development
+
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+
+volumes:
+  node_modules:
+
